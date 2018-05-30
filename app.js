@@ -21,7 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contact',(req, res) =>);
+app.use('/about', (req, res) =>{
+  res.end("<h1>Bienvenue sur la page 'A propos'</h1>")
+});
+app.get('/contact',(req, res) =>{
+  res.send('<h1>Page Contact</h1>')
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
